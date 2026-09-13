@@ -4,14 +4,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-     hi
-    </>
-  )
+    <div className="p-10 text-center">
+      <h1 className="text-3xl font-bold text-blue-600">Dev Stack Builder</h1>
+    </div>
+  );
 }
-
-export default App
