@@ -1,27 +1,30 @@
 import React, { useState } from 'react';
+// Import images directly from src/assets folder
+import logoImg from './assets/logo-text.png';
+import bannerImg from './assets/banner-stack.png';
 
 export default function App() {
-  // State to track mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
       {/* ================= NAVBAR START ================= */}
-      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* Left Side: Brand Logo & Title */}
-            <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-orange-500 via-pink-500 to-violet-600 flex items-center justify-center text-white font-extrabold text-base shadow-md">
-                DS
-              </div>
-              <span className="text-xl font-black text-slate-900 tracking-tight">
-                Dev <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">Stack</span>
-              </span>
+            {/* 1. Brand Logo Image */}
+            <div className="flex items-center">
+              <a href="#home">
+                <img 
+                  src={logoImg} 
+                  alt="DevStack Logo" 
+                  className="h-9 w-auto object-contain"
+                />
+              </a>
             </div>
 
-            {/* Middle: Navigation Links (Desktop View) */}
+            {/* 2. Navigation Links */}
             <div className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
               <a href="#home" className="hover:text-orange-500 transition-colors">Home</a>
               <a href="#tech" className="hover:text-orange-500 transition-colors">Technologies</a>
@@ -30,22 +33,21 @@ export default function App() {
               <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
             </div>
 
-            {/* Right Side: Auth Action Buttons */}
+            {/* 3. Action Buttons */}
             <div className="hidden sm:flex items-center space-x-3">
               <button className="text-sm font-semibold text-slate-700 hover:text-slate-900 px-4 py-2 rounded-lg hover:bg-slate-100 transition">
                 Sign In
               </button>
-              <button className="text-sm font-semibold text-white px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 hover:opacity-95 shadow-md hover:shadow-lg transition">
+              <button className="text-sm font-semibold text-white px-5 py-2.5 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 hover:opacity-95 shadow-md transition">
                 Sign Up
               </button>
             </div>
 
-            {/* Mobile View: Hamburger Button (Right aligned) */}
+            {/* 4. Hamburger Icon */}
             <div className="flex md:hidden items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
-                aria-label="Toggle Navigation Menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {isMobileMenuOpen ? (
@@ -60,7 +62,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu Drawer */}
+        {/* 5. Mobile Menu Drawer */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-5 space-y-2 text-sm font-semibold text-slate-700">
             <a href="#home" className="block py-2 px-3 hover:bg-orange-50 hover:text-orange-600 rounded-lg transition">Home</a>
@@ -68,19 +70,55 @@ export default function App() {
             <a href="#projects" className="block py-2 px-3 hover:bg-orange-50 hover:text-orange-600 rounded-lg transition">Projects</a>
             <a href="#about" className="block py-2 px-3 hover:bg-orange-50 hover:text-orange-600 rounded-lg transition">About</a>
             <a href="#contact" className="block py-2 px-3 hover:bg-orange-50 hover:text-orange-600 rounded-lg transition">Contact</a>
-            
-            <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
-              <button className="w-full text-center text-sm font-semibold text-slate-700 py-2 rounded-lg hover:bg-slate-100 transition">
-                Sign In
-              </button>
-              <button className="w-full text-center text-sm font-semibold text-white py-2.5 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 shadow-md">
-                Sign Up
-              </button>
-            </div>
           </div>
         )}
       </nav>
       {/* ================= NAVBAR END ================= */}
+
+      {/* ================= HERO SECTION START ================= */}
+      <section id="home" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Column: Text & Buttons */}
+          <div className="text-left space-y-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              Build Your Ideal <br />
+              <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
+                Development Stack
+              </span>
+            </h1>
+
+            <p className="text-slate-500 text-sm sm:text-base max-w-lg leading-relaxed font-medium">
+              Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="#tech"
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 text-white font-semibold text-sm shadow-md hover:opacity-95 transition"
+              >
+                Explore Technologies
+              </a>
+              <button className="px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold text-sm hover:bg-slate-50 transition shadow-sm">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: 3D Banner Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-md bg-slate-50/50 border border-slate-200/60 rounded-3xl p-6 flex items-center justify-center shadow-sm">
+              <img 
+                src={bannerImg} 
+                alt="DevStack Illustration" 
+                className="w-full max-w-xs sm:max-w-sm h-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+      {/* ================= HERO SECTION END ================= */}
     </div>
   );
 }
