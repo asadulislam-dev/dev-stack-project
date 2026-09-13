@@ -315,6 +315,72 @@ export default function App() {
       </section>
       {/* ================= TECHNOLOGIES SECTION END ================= */}
 
+
+
+      {/* ================= FOOTER START ================= */}
+      {/* FOOTER */}
+      <footer className="bg-white border-t border-slate-100 pt-12 pb-8 mt-16 text-slate-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10 border-b border-slate-100">
+            
+            {/* Brand Block */}
+            <div className="md:col-span-2 space-y-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-orange-500 via-pink-500 to-violet-600 flex items-center justify-center text-white font-bold text-xs shadow-md">
+                  DS
+                </div>
+                <span className="text-lg font-black text-slate-900">Dev Stack</span>
+              </div>
+              <p className="text-xs text-slate-500 max-w-sm leading-relaxed">
+                Curated tools, technologies, and resources for developers building modern software.
+              </p>
+              <div className="flex space-x-4 text-xs font-medium text-slate-500">
+                <a href="#github" className="hover:text-slate-900">GitHub</a>
+                <a href="#twitter" className="hover:text-slate-900">Twitter</a>
+                <a href="#linkedin" className="hover:text-slate-900">LinkedIn</a>
+              </div>
+            </div>
+
+            {/* Links */}
+            <div>
+              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Product</h4>
+              <ul className="space-y-2 text-xs text-slate-500">
+                <li><a href="#home" className="hover:text-slate-900">Home</a></li>
+                <li><a href="#tech" className="hover:text-slate-900">Technologies</a></li>
+                <li><a href="#projects" className="hover:text-slate-900">Projects</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Company</h4>
+              <ul className="space-y-2 text-xs text-slate-500">
+                <li><a href="#about" className="hover:text-slate-900">About</a></li>
+                <li><a href="#contact" className="hover:text-slate-900">Contact</a></li>
+                <li><a href="#careers" className="hover:text-slate-900">Careers</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Legal</h4>
+              <ul className="space-y-2 text-xs text-slate-500">
+                <li><a href="#privacy" className="hover:text-slate-900">Privacy Policy</a></li>
+                <li><a href="#terms" className="hover:text-slate-900">Terms of Service</a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div className="pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400">
+            <p>© 2026 Dev Stack. All rights reserved.</p>
+            <div className="flex space-x-4 mt-2 sm:mt-0">
+              <a href="#privacy" className="hover:text-slate-600">Privacy</a>
+              <a href="#terms" className="hover:text-slate-600">Terms</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      {/* ================= FOOTER END ================= */}
+
     </div>
   );
 }
